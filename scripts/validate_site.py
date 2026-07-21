@@ -55,6 +55,11 @@ def main() -> int:
         for label, pattern in markers.items():
             if not re.search(pattern, text):
                 errors.append(f"{relative} missing {label}")
+        if not re.search(
+            r'hreflang=(?:"x-default"|x-default)\s+href=(?:"https://douglasferreira-me\.github\.io/oasisWebsite/"|https://douglasferreira-me\.github\.io/oasisWebsite/)',
+            text,
+        ):
+            errors.append(f"{relative} has an invalid x-default URL")
         for block in re.findall(
             r"<script\s+type=(?:\"application/ld\+json\"|application/ld\+json)>(.*?)</script>",
             text,
