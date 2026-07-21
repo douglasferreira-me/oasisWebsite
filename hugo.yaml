@@ -1,0 +1,94 @@
+baseURL: "https://douglasferreira-me.github.io/oasisWebsite/"
+title: "OASIS — UFRJ"
+defaultContentLanguage: pt
+defaultContentLanguageInSubdir: false
+enableRobotsTXT: true
+enableGitInfo: false
+canonifyURLs: false
+disableKinds: [taxonomy, term]
+pagination:
+  pagerSize: 12
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+params:
+  organization: "Observatório de Algoritmos e Sistemas de Informação com Impacto Social"
+  shortName: "OASIS"
+  institution: "Universidade Federal do Rio de Janeiro"
+  ogImage: "images/oasis-symbol.png"
+  themeColor: "#D38C24"
+languages:
+  pt:
+    label: "Português"
+    locale: "pt-BR"
+    weight: 1
+    title: "OASIS — UFRJ"
+    params:
+      ogLocale: "pt_BR"
+      description: "Observatório da UFRJ dedicado aos impactos sociais, éticos e políticos de algoritmos e sistemas de informação."
+      skipToContent: "Ir para o conteúdo"
+      languageLabel: "Idioma"
+      themeLabel: "Alternar tema"
+      menuLabel: "Abrir menu"
+      readMore: "Saiba mais"
+      footerText: "Tecnologia sob uma perspectiva democrática, inclusiva e socialmente responsável."
+    menu:
+      main:
+        - { name: "Sobre", pageRef: "/about", weight: 10 }
+        - { name: "Equipe", pageRef: "/team", weight: 20 }
+        - { name: "Estudos", pageRef: "/studies", weight: 30 }
+        - { name: "Na mídia", pageRef: "/media", weight: 40 }
+        - { name: "Projetos", pageRef: "/projects", weight: 50 }
+        - { name: "Contato", pageRef: "/contact", weight: 60 }
+  en:
+    label: "English"
+    locale: "en"
+    weight: 2
+    title: "OASIS — UFRJ"
+    params:
+      ogLocale: "en_US"
+      description: "A UFRJ observatory dedicated to the social, ethical and political impacts of algorithms and information systems."
+      skipToContent: "Skip to content"
+      languageLabel: "Language"
+      themeLabel: "Toggle theme"
+      menuLabel: "Open menu"
+      readMore: "Learn more"
+      footerText: "Technology through a democratic, inclusive and socially responsible perspective."
+    menu:
+      main:
+        - { name: "About", pageRef: "/about", weight: 10 }
+        - { name: "Team", pageRef: "/team", weight: 20 }
+        - { name: "Studies", pageRef: "/studies", weight: 30 }
+        - { name: "In the media", pageRef: "/media", weight: 40 }
+        - { name: "Projects", pageRef: "/projects", weight: 50 }
+        - { name: "Contact", pageRef: "/contact", weight: 60 }
+  es:
+    label: "Español"
+    locale: "es"
+    weight: 3
+    title: "OASIS — UFRJ"
+    params:
+      ogLocale: "es_ES"
+      description: "Observatorio de la UFRJ dedicado a los impactos sociales, éticos y políticos de los algoritmos y sistemas de información."
+      skipToContent: "Ir al contenido"
+      languageLabel: "Idioma"
+      themeLabel: "Cambiar tema"
+      menuLabel: "Abrir menú"
+      readMore: "Más información"
+      footerText: "Tecnología desde una perspectiva democrática, inclusiva y socialmente responsable."
+    menu:
+      main:
+        - { name: "Sobre", pageRef: "/about", weight: 10 }
+        - { name: "Equipo", pageRef: "/team", weight: 20 }
+        - { name: "Estudios", pageRef: "/studies", weight: 30 }
+        - { name: "En los medios", pageRef: "/media", weight: 40 }
+        - { name: "Proyectos", pageRef: "/projects", weight: 50 }
+        - { name: "Contacto", pageRef: "/contact", weight: 60 }
+outputs:
+  home: [HTML, RSS]
+  section: [HTML, RSS]
+module:
+  hugoVersion:
+    extended: true
+    min: "0.164.0"

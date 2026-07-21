@@ -1,0 +1,44 @@
+{
+  "name": "oasis-website",
+  "version": "1.2.0",
+  "description": "Site multilíngue do OASIS/UFRJ em Hugo",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "alpinejs": "^3.15.12",
+    "concurrently": "^10.0.3",
+    "tailwindcss": "^4.3.2",
+    "vite": "^8.1.0"
+  },
+  "scripts": {
+    "dev": "vite build --mode development --no-watch && hugo server --disableFastRender --noHTTPCache --disableBrowserError",
+    "dev:watch": "concurrently \"vite build --mode development --watch\" \"hugo server --disableFastRender --noHTTPCache --disableBrowserError\"",
+    "css:watch": "vite build --mode development --watch",
+    "hugo:watch": "hugo server --disableFastRender --noHTTPCache --disableBrowserError",
+    "build:css": "vite build --mode production",
+    "build:css:dev": "vite build --mode development --no-watch",
+    "build": "vite build --mode production && hugo --minify --gc --cleanDestinationDir",
+    "rebuild": "find static/css/ -name \"main.*.css\" -delete 2>/dev/null || true && vite build --mode development --no-watch",
+    "test": "hugo",
+    "optimize": "vite build --mode production && hugo --minify --gc --cleanDestinationDir && echo \"Build optimized for production\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/douglasferreira-me/oasisWebsite.git"
+  },
+  "keywords": ["hugo", "tailwindcss", "sveltia-cms", "multilingual", "github-pages"],
+  "author": "OASIS/UFRJ",
+  "license": "Apache-2.0",
+  "bugs": { "url": "https://github.com/douglasferreira-me/oasisWebsite/issues" },
+  "homepage": "https://douglasferreira-me.github.io/oasisWebsite/",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.10.0",
+      "onFail": "download"
+    }
+  },
+  "overrides": {
+    "tar": ">=7.5.2"
+  },
+  "packageManager": "pnpm@11.10.0"
+}

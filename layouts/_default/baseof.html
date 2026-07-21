@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="{{ .Language.Locale }}">
+<head>{{ partial "head.html" . }}</head>
+<body>
+  <a class="skip-link" href="#main-content">{{ .Site.Params.skipToContent }}</a>
+  {{ partial "nav.html" . }}
+  <main id="main-content">{{ block "main" . }}{{ end }}</main>
+  {{ partial "footer.html" . }}
+  <script>
+    const root=document.documentElement,themeButton=document.querySelector('[data-theme-toggle]');
+    themeButton?.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('oasis-theme',root.dataset.theme)});
+    const menuButton=document.querySelector('[data-menu-toggle]'),nav=document.querySelector('[data-nav-links]');
+    menuButton?.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(open))});
+  </script>
+</body>
+</html>

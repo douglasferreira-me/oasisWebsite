@@ -1,0 +1,195 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.172.2/schema/sveltia-cms.json
+backend:
+  name: github
+  repo: douglasferreira-me/oasisWebsite
+  branch: main
+
+media_folder: static/uploads
+public_folder: /oasisWebsite/uploads
+publish_mode: simple
+
+i18n:
+  structure: multiple_files
+  locales: [pt, en, es]
+  default_locale: pt
+  initial_locales: all
+
+site_url: https://douglasferreira-me.github.io/oasisWebsite/
+display_url: https://douglasferreira-me.github.io/oasisWebsite/
+logo_url: https://douglasferreira-me.github.io/oasisWebsite/images/oasis-symbol.png
+
+collections:
+  - name: pages
+    label: Páginas
+    i18n: true
+    files:
+      - name: home
+        label: Início
+        file: content/_index.{{locale}}.md
+        i18n: true
+        fields:
+          - { label: Título, name: title, widget: string, i18n: true }
+          - { label: Descrição, name: description, widget: text, i18n: true }
+          - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+          - label: Botão principal
+            name: primaryCta
+            widget: object
+            i18n: true
+            fields:
+              - { label: Texto, name: label, widget: string, i18n: true }
+              - { label: Caminho, name: url, widget: string, i18n: duplicate }
+          - label: Botão secundário
+            name: secondaryCta
+            widget: object
+            i18n: true
+            fields:
+              - { label: Texto, name: label, widget: string, i18n: true }
+              - { label: Caminho, name: url, widget: string, i18n: duplicate }
+          - { label: Título dos pilares, name: pillarsTitle, widget: string, i18n: true }
+          - { label: Introdução dos pilares, name: pillarsIntro, widget: text, i18n: true }
+          - label: Pilares
+            name: pillars
+            widget: list
+            i18n: true
+            min: 3
+            max: 3
+            fields:
+              - { label: Título, name: title, widget: string, i18n: true }
+              - { label: Texto, name: text, widget: text, i18n: true }
+          - { label: Título dos destaques, name: featuredTitle, widget: string, i18n: true }
+          - { label: Introdução dos destaques, name: featuredIntro, widget: text, i18n: true }
+          - { label: Chave de tradução, name: translationKey, widget: hidden, default: home, i18n: duplicate }
+      - name: about
+        label: Sobre
+        file: content/about.{{locale}}.md
+        i18n: true
+        fields: &page_fields
+          - { label: Título, name: title, widget: string, i18n: true }
+          - { label: Descrição, name: description, widget: text, i18n: true }
+          - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+          - { label: Conteúdo, name: body, widget: richtext, i18n: true }
+          - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
+      - name: team
+        label: Equipe
+        file: content/team.{{locale}}.md
+        i18n: true
+        fields: &section_fields
+          - { label: Título, name: title, widget: string, i18n: true }
+          - { label: Descrição, name: description, widget: text, i18n: true }
+          - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+          - { label: Título do placeholder, name: placeholderTitle, widget: string, i18n: true }
+          - { label: Texto do placeholder, name: placeholderText, widget: text, i18n: true }
+          - { label: Layout, name: layout, widget: hidden, default: listing, i18n: duplicate }
+          - { label: Tipo, name: type, widget: hidden, default: page, i18n: duplicate }
+          - { label: Coleção, name: collection, widget: hidden, i18n: duplicate }
+          - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
+      - name: studies
+        label: Estudos
+        file: content/studies.{{locale}}.md
+        i18n: true
+        fields: *section_fields
+      - name: media
+        label: Na mídia
+        file: content/media.{{locale}}.md
+        i18n: true
+        fields: *section_fields
+      - name: projects
+        label: Projetos
+        file: content/projects.{{locale}}.md
+        i18n: true
+        fields: *section_fields
+      - name: contact
+        label: Contato
+        file: content/contact.{{locale}}.md
+        i18n: true
+        fields:
+          - { label: Título, name: title, widget: string, i18n: true }
+          - { label: Descrição, name: description, widget: text, i18n: true }
+          - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+          - { label: E-mail, name: email, widget: string, required: false, i18n: duplicate }
+          - { label: Rótulo do e-mail, name: emailLabel, widget: string, i18n: true }
+          - { label: Rótulo da localização, name: locationLabel, widget: string, i18n: true }
+          - { label: Localização, name: location, widget: string, i18n: true }
+          - { label: Rótulo das redes, name: socialLabel, widget: string, i18n: true }
+          - { label: Placeholder, name: placeholder, widget: string, i18n: true }
+          - { label: Conteúdo, name: body, widget: richtext, i18n: true }
+          - { label: Layout, name: layout, widget: hidden, default: contact, i18n: duplicate }
+          - { label: Tipo, name: type, widget: hidden, default: page, i18n: duplicate }
+          - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
+
+  - name: team
+    label: Integrantes
+    label_singular: Integrante
+    folder: content/team-items
+    create: true
+    i18n: { structure: multiple_files, locales: [pt, en, es] }
+    slug: "{{slug}}"
+    fields:
+      - { label: Nome, name: title, widget: string, i18n: duplicate }
+      - { label: Função, name: role, widget: string, i18n: true }
+      - { label: Biografia curta, name: summary, widget: text, i18n: true }
+      - { label: Biografia completa, name: body, widget: richtext, i18n: true, required: false }
+      - { label: Foto, name: image, widget: image, i18n: duplicate, required: false }
+      - { label: Links, name: links, widget: list, i18n: duplicate, required: false, fields: [{ label: Rótulo, name: label, widget: string }, { label: URL, name: url, widget: string }] }
+      - { label: Ordem, name: weight, widget: number, value_type: int, i18n: duplicate, default: 50 }
+      - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }
+
+  - name: studies
+    label: Estudos e publicações
+    label_singular: Estudo
+    folder: content/study-items
+    create: true
+    i18n: { structure: multiple_files, locales: [pt, en, es] }
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: Título, name: title, widget: string, i18n: true }
+      - { label: Resumo, name: summary, widget: text, i18n: true }
+      - { label: Autores, name: authors, widget: list, i18n: duplicate }
+      - { label: Data, name: date, widget: datetime, time_format: false, i18n: duplicate }
+      - { label: Temas, name: topics, widget: list, i18n: true }
+      - { label: Arquivo, name: file, widget: file, i18n: duplicate, required: false }
+      - { label: URL externa, name: externalUrl, widget: string, i18n: duplicate, required: false }
+      - { label: Imagem, name: image, widget: image, i18n: duplicate, required: false }
+      - { label: Destaque, name: featured, widget: boolean, i18n: duplicate, default: false }
+      - { label: Conteúdo, name: body, widget: richtext, i18n: true, required: false }
+      - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }
+
+  - name: media
+    label: Na mídia
+    label_singular: Registro de mídia
+    folder: content/media-items
+    create: true
+    i18n: { structure: multiple_files, locales: [pt, en, es] }
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: Título, name: title, widget: string, i18n: true }
+      - { label: Veículo, name: outlet, widget: string, i18n: duplicate }
+      - { label: Data, name: date, widget: datetime, time_format: false, i18n: duplicate }
+      - { label: URL, name: externalUrl, widget: string, i18n: duplicate }
+      - { label: Descrição, name: summary, widget: text, i18n: true }
+      - { label: Imagem, name: image, widget: image, i18n: duplicate, required: false }
+      - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }
+
+  - name: projects
+    label: Projetos
+    label_singular: Projeto
+    folder: content/project-items
+    filter: { field: type, value: project }
+    create: true
+    i18n: { structure: multiple_files, locales: [pt, en, es] }
+    slug: "{{slug}}"
+    fields:
+      - { label: Título, name: title, widget: string, i18n: true }
+      - { label: Resumo, name: summary, widget: text, i18n: true }
+      - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+      - { label: Status, name: status, widget: string, i18n: true }
+      - { label: Período, name: period, widget: string, i18n: true }
+      - { label: Parceiros, name: partners, widget: list, i18n: duplicate }
+      - { label: Temas, name: topics, widget: list, i18n: true }
+      - { label: Imagem, name: image, widget: image, i18n: duplicate, required: false }
+      - { label: URL externa, name: externalUrl, widget: string, i18n: duplicate, required: false }
+      - { label: Destaque, name: featured, widget: boolean, i18n: duplicate, default: false }
+      - { label: Ordem, name: weight, widget: number, value_type: int, i18n: duplicate, default: 50 }
+      - { label: Conteúdo, name: body, widget: richtext, i18n: true }
+      - { label: Tipo, name: type, widget: hidden, default: project, i18n: duplicate }
+      - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }

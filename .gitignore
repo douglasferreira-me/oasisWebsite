@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+.pnpm-store/
+resources/
+public/
+.hugo_build.lock
+.vercel
+yarn-error.log
+# Local Netlify folder
+.netlify
+yarn-error.log
+# npm lockfile (project uses pnpm)
+package-lock.json
+static/css/.vite/
