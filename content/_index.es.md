@@ -1,7 +1,8 @@
 ---
-title: "Tecnología con impacto social en foco"
+title: "Observatorio de Algoritmos y Sistemas de Información con Impacto Social"
+tagline: "Por una tecnología responsable"
 description: "Investigamos cómo los algoritmos, la inteligencia artificial y los sistemas de información transforman la sociedad — y producimos conocimiento para que esa transformación sea democrática, inclusiva y responsable."
-eyebrow: "Observatorio de la UFRJ"
+eyebrow: "Universidad Federal de Río de Janeiro (UFRJ)"
 primaryCta: { label: "Conoce OASIS", url: "about/" }
 secondaryCta: { label: "Explora los proyectos", url: "projects/" }
 pillarsTitle: "Observar, comprender y transformar"

@@ -19,6 +19,26 @@ display_url: https://douglasferreira-me.github.io/oasisWebsite/
 logo_url: https://douglasferreira-me.github.io/oasisWebsite/images/oasis-symbol.png
 
 collections:
+  - name: settings
+    label: Configurações
+    files:
+      - name: social
+        label: Redes sociais
+        file: data/social.yaml
+        fields:
+          - label: Instagram
+            name: instagram
+            widget: object
+            fields:
+              - { label: Nome, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: LinkedIn
+            name: linkedin
+            widget: object
+            fields:
+              - { label: Nome, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+
   - name: pages
     label: Páginas
     i18n: true
@@ -31,6 +51,7 @@ collections:
           - { label: Título, name: title, widget: string, i18n: true }
           - { label: Descrição, name: description, widget: text, i18n: true }
           - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+          - { label: Frase de destaque, name: tagline, widget: string, i18n: true }
           - label: Botão principal
             name: primaryCta
             widget: object

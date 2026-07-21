@@ -31,6 +31,7 @@ languages:
       languageLabel: "Idioma"
       themeLabel: "Alternar tema"
       menuLabel: "Abrir menu"
+      socialLabel: "Redes sociais"
       readMore: "Saiba mais"
       footerText: "Tecnologia sob uma perspectiva democrática, inclusiva e socialmente responsável."
     menu:
@@ -53,6 +54,7 @@ languages:
       languageLabel: "Language"
       themeLabel: "Toggle theme"
       menuLabel: "Open menu"
+      socialLabel: "Social media"
       readMore: "Learn more"
       footerText: "Technology through a democratic, inclusive and socially responsible perspective."
     menu:
@@ -75,6 +77,7 @@ languages:
       languageLabel: "Idioma"
       themeLabel: "Cambiar tema"
       menuLabel: "Abrir menú"
+      socialLabel: "Redes sociales"
       readMore: "Más información"
       footerText: "Tecnología desde una perspectiva democrática, inclusiva y socialmente responsable."
     menu:

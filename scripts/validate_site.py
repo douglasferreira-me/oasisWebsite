@@ -25,6 +25,24 @@ REQUIRED_ROUTES = [
     "admin/index.html",
 ]
 
+REQUIRED_HOME_TEXT = {
+    "index.html": [
+        "Observatório de Algoritmos e Sistemas de Informação com Impacto Social",
+        "Universidade Federal do Rio de Janeiro (UFRJ)",
+        "Por uma tecnologia responsável",
+    ],
+    "en/index.html": [
+        "Observatory of Algorithms and Information Systems with Social Impact",
+        "Federal University of Rio de Janeiro (UFRJ)",
+        "For responsible technology",
+    ],
+    "es/index.html": [
+        "Observatorio de Algoritmos y Sistemas de Información con Impacto Social",
+        "Universidad Federal de Río de Janeiro (UFRJ)",
+        "Por una tecnología responsable",
+    ],
+}
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -36,6 +54,15 @@ def main() -> int:
     for route in REQUIRED_ROUTES:
         if not (root / route).is_file():
             errors.append(f"missing route: {route}")
+
+    for route, snippets in REQUIRED_HOME_TEXT.items():
+        home = root / route
+        if not home.is_file():
+            continue
+        text = home.read_text(encoding="utf-8")
+        for snippet in snippets:
+            if snippet not in text:
+                errors.append(f"{route} missing required institutional text: {snippet}")
 
     html_files = list(root.rglob("*.html"))
     for path in html_files:
@@ -86,6 +113,12 @@ def main() -> int:
                 errors.append(f"{relative} links to missing local target: {url}")
         if re.search(r'(href|src)="/(?!oasisWebsite/)', text):
             errors.append(f"{relative} contains a root-absolute asset or link")
+        for social_url in (
+            "https://www.instagram.com/oasis.ufrj/",
+            "https://www.linkedin.com/company/oasis-ufrj",
+        ):
+            if social_url not in text:
+                errors.append(f"{relative} missing social link: {social_url}")
 
     sitemap = root / "sitemap.xml"
     robots = root / "robots.txt"
