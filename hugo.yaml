@@ -39,7 +39,7 @@ languages:
     menu:
       main:
         - { name: "Sobre", pageRef: "/about", weight: 10 }
-        - { name: "Quem faz o OASIS", pageRef: "/team", weight: 20 }
+        - { name: "Quem somos", pageRef: "/team", weight: 20 }
         - { name: "Estudos", pageRef: "/studies", weight: 30 }
         - { name: "Repercussão", pageRef: "/media", weight: 40 }
         - { name: "Tecnologias", pageRef: "/projects", weight: 50 }
@@ -64,7 +64,7 @@ languages:
     menu:
       main:
         - { name: "About", pageRef: "/about", weight: 10 }
-        - { name: "People behind OASIS", pageRef: "/team", weight: 20 }
+        - { name: "Who we are", pageRef: "/team", weight: 20 }
         - { name: "Studies", pageRef: "/studies", weight: 30 }
         - { name: "Coverage", pageRef: "/media", weight: 40 }
         - { name: "Technologies", pageRef: "/projects", weight: 50 }
@@ -89,7 +89,7 @@ languages:
     menu:
       main:
         - { name: "Sobre", pageRef: "/about", weight: 10 }
-        - { name: "Quiénes hacen OASIS", pageRef: "/team", weight: 20 }
+        - { name: "Quiénes somos", pageRef: "/team", weight: 20 }
         - { name: "Estudios", pageRef: "/studies", weight: 30 }
         - { name: "Repercusión", pageRef: "/media", weight: 40 }
         - { name: "Tecnologías", pageRef: "/projects", weight: 50 }

@@ -1,5 +1,5 @@
 ---
-title: "People behind OASIS"
+title: "Who we are"
 description: "An interdisciplinary network of students, researchers, faculty and collaborators working to understand technology's social impacts."
 eyebrow: "People"
 layout: "team"

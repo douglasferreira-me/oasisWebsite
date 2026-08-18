@@ -44,9 +44,9 @@ REQUIRED_HOME_TEXT = {
 }
 
 REQUIRED_PAGE_TEXT = {
-    "team/index.html": ["Quem faz o OASIS", "Coordenadores", "Conselho Acadêmico", "Extensionistas"],
-    "en/team/index.html": ["People behind OASIS", "Coordinators", "Academic Council", "Outreach Fellows"],
-    "es/team/index.html": ["Quiénes hacen OASIS", "Coordinadores", "Consejo Académico", "Extensionistas"],
+    "team/index.html": ["Quem somos", "Coordenadores", "Conselho Acadêmico", "Extensionistas"],
+    "en/team/index.html": ["Who we are", "Coordinators", "Academic Council", "Outreach Fellows"],
+    "es/team/index.html": ["Quiénes somos", "Coordinadores", "Consejo Académico", "Extensionistas"],
     "media/index.html": ["Repercussão"],
     "en/media/index.html": ["Coverage"],
     "es/media/index.html": ["Repercusión"],

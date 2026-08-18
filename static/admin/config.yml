@@ -50,7 +50,7 @@ collections:
             fields:
               - { label: Nome, name: name, widget: string }
               - { label: Logo, name: logo, widget: image }
-              - { label: Site, name: url, widget: string }
+              - { label: Site, name: url, widget: string, hint: "Pode ser informado com ou sem https://" }
               - { label: Ordem, name: weight, widget: number, value_type: int, default: 50 }
 
   - name: pages
@@ -107,7 +107,7 @@ collections:
           - { label: Conteúdo, name: body, widget: richtext, i18n: true }
           - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
       - name: team
-        label: Quem faz o OASIS
+        label: Quem somos
         file: content/team.{{locale}}.md
         i18n: true
         fields:
@@ -164,7 +164,7 @@ collections:
           - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
 
   - name: team
-    label: Quem faz o OASIS
+    label: Quem somos
     label_singular: Pessoa
     folder: content/team-items
     create: true

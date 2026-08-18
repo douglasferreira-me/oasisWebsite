@@ -1,5 +1,5 @@
 ---
-title: "Quiénes hacen OASIS"
+title: "Quiénes somos"
 description: "Una red interdisciplinaria de estudiantes, investigadores, docentes y colaboradores reunida para comprender los impactos sociales de la tecnología."
 eyebrow: "Personas"
 layout: "team"

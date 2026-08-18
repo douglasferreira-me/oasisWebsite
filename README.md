@@ -43,7 +43,7 @@ Depois do deploy, o painel estará em:
 3. Cole o token no painel. O token fica somente no armazenamento local do navegador e nunca deve ser salvo no repositório.
 4. Edite as três traduções antes de publicar uma alteração.
 
-O CMS controla Home, Sobre, Quem faz o OASIS, Estudos, Repercussão, Tecnologias, Contato e as coleções repetíveis. Em **Configurações → Parceiros**, cada item recebe nome, logo, site e ordem de exibição. Uploads são versionados em `static/uploads/`.
+O CMS controla Home, Sobre, Quem somos, Estudos, Repercussão, Tecnologias, Contato e as coleções repetíveis. Em **Configurações → Parceiros**, cada item recebe nome, logo, site e ordem de exibição. Uploads são versionados em `static/uploads/`.
 
 ## Publicação
 
