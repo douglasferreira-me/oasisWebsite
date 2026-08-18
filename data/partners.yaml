@@ -1,5 +1,5 @@
 partners:
   - name: Instituto Máquina Aberta
     logo: /uploads/institutoMaquinaAberta.png
-    url: maquinaaberta.org
+    url: https://maquinaaberta.org
     weight: 50
