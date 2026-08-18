@@ -38,6 +38,20 @@ collections:
             fields:
               - { label: Nome, name: label, widget: string }
               - { label: URL, name: url, widget: string }
+      - name: partners
+        label: Parceiros
+        file: data/partners.yaml
+        fields:
+          - label: Parceiros
+            label_singular: Parceiro
+            name: partners
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Nome, name: name, widget: string }
+              - { label: Logo, name: logo, widget: image }
+              - { label: Site, name: url, widget: string }
+              - { label: Ordem, name: weight, widget: number, value_type: int, default: 50 }
 
   - name: pages
     label: Páginas
@@ -77,8 +91,10 @@ collections:
             fields:
               - { label: Título, name: title, widget: string, i18n: true }
               - { label: Texto, name: text, widget: text, i18n: true }
-          - { label: Título dos destaques, name: featuredTitle, widget: string, i18n: true }
-          - { label: Introdução dos destaques, name: featuredIntro, widget: text, i18n: true }
+          - { label: Título dos parceiros, name: partnersTitle, widget: string, i18n: true }
+          - { label: Introdução dos parceiros, name: partnersIntro, widget: text, i18n: true }
+          - { label: Título sem parceiros, name: partnersPlaceholderTitle, widget: string, i18n: true }
+          - { label: Texto sem parceiros, name: partnersPlaceholderText, widget: text, i18n: true }
           - { label: Chave de tradução, name: translationKey, widget: hidden, default: home, i18n: duplicate }
       - name: about
         label: Sobre
@@ -91,8 +107,25 @@ collections:
           - { label: Conteúdo, name: body, widget: richtext, i18n: true }
           - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
       - name: team
-        label: Equipe
+        label: Quem faz o OASIS
         file: content/team.{{locale}}.md
+        i18n: true
+        fields:
+          - { label: Título, name: title, widget: string, i18n: true }
+          - { label: Descrição, name: description, widget: text, i18n: true }
+          - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
+          - { label: Título — Coordenadores, name: coordinatorsTitle, widget: string, i18n: true }
+          - { label: Título — Conselho Acadêmico, name: academicCouncilTitle, widget: string, i18n: true }
+          - { label: Título — Extensionistas, name: extensionistsTitle, widget: string, i18n: true }
+          - { label: Texto do link para minibio, name: profileLabel, widget: string, i18n: true }
+          - { label: Mensagem para categoria vazia, name: groupPlaceholder, widget: string, i18n: true }
+          - { label: Layout, name: layout, widget: hidden, default: team, i18n: duplicate }
+          - { label: Tipo, name: type, widget: hidden, default: page, i18n: duplicate }
+          - { label: Coleção, name: collection, widget: hidden, i18n: duplicate }
+          - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
+      - name: studies
+        label: Estudos
+        file: content/studies.{{locale}}.md
         i18n: true
         fields: &section_fields
           - { label: Título, name: title, widget: string, i18n: true }
@@ -104,18 +137,13 @@ collections:
           - { label: Tipo, name: type, widget: hidden, default: page, i18n: duplicate }
           - { label: Coleção, name: collection, widget: hidden, i18n: duplicate }
           - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
-      - name: studies
-        label: Estudos
-        file: content/studies.{{locale}}.md
-        i18n: true
-        fields: *section_fields
       - name: media
-        label: Na mídia
+        label: Repercussão
         file: content/media.{{locale}}.md
         i18n: true
         fields: *section_fields
       - name: projects
-        label: Projetos
+        label: Tecnologias
         file: content/projects.{{locale}}.md
         i18n: true
         fields: *section_fields
@@ -129,30 +157,38 @@ collections:
           - { label: Chamada superior, name: eyebrow, widget: string, i18n: true }
           - { label: E-mail, name: email, widget: string, required: false, i18n: duplicate }
           - { label: Rótulo do e-mail, name: emailLabel, widget: string, i18n: true }
-          - { label: Rótulo da localização, name: locationLabel, widget: string, i18n: true }
-          - { label: Localização, name: location, widget: string, i18n: true }
           - { label: Rótulo das redes, name: socialLabel, widget: string, i18n: true }
-          - { label: Placeholder, name: placeholder, widget: string, i18n: true }
           - { label: Conteúdo, name: body, widget: richtext, i18n: true }
           - { label: Layout, name: layout, widget: hidden, default: contact, i18n: duplicate }
           - { label: Tipo, name: type, widget: hidden, default: page, i18n: duplicate }
           - { label: Chave de tradução, name: translationKey, widget: hidden, i18n: duplicate }
 
   - name: team
-    label: Integrantes
-    label_singular: Integrante
+    label: Quem faz o OASIS
+    label_singular: Pessoa
     folder: content/team-items
     create: true
     i18n: { structure: multiple_files, locales: [pt, en, es] }
     slug: "{{slug}}"
     fields:
       - { label: Nome, name: title, widget: string, i18n: duplicate }
+      - label: Categoria
+        name: group
+        widget: select
+        i18n: duplicate
+        options:
+          - { label: Coordenadores, value: coordinators }
+          - { label: Conselho Acadêmico, value: academic-council }
+          - { label: Extensionistas, value: extensionists }
       - { label: Função, name: role, widget: string, i18n: true }
-      - { label: Biografia curta, name: summary, widget: text, i18n: true }
-      - { label: Biografia completa, name: body, widget: richtext, i18n: true, required: false }
+      - { label: Formação acadêmica (legenda), name: academicBackground, widget: text, i18n: true }
+      - { label: Resumo da minibio, name: summary, widget: text, i18n: true }
+      - { label: Minibio completa, name: body, widget: richtext, i18n: true, required: false }
       - { label: Foto, name: image, widget: image, i18n: duplicate, required: false }
+      - { label: Link externo para minibio, name: bioUrl, widget: string, i18n: duplicate, required: false, hint: "Deixe vazio para usar a minibio criada acima." }
       - { label: Links, name: links, widget: list, i18n: duplicate, required: false, fields: [{ label: Rótulo, name: label, widget: string }, { label: URL, name: url, widget: string }] }
       - { label: Ordem, name: weight, widget: number, value_type: int, i18n: duplicate, default: 50 }
+      - { label: Tipo, name: type, widget: hidden, default: team, i18n: duplicate }
       - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }
 
   - name: studies
@@ -176,14 +212,21 @@ collections:
       - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }
 
   - name: media
-    label: Na mídia
-    label_singular: Registro de mídia
+    label: Repercussão
+    label_singular: Notícia ou evento
     folder: content/media-items
     create: true
     i18n: { structure: multiple_files, locales: [pt, en, es] }
     slug: "{{year}}-{{slug}}"
     fields:
       - { label: Título, name: title, widget: string, i18n: true }
+      - label: Tipo
+        name: entryType
+        widget: select
+        i18n: duplicate
+        options:
+          - { label: Notícia / mídia, value: media }
+          - { label: Evento, value: event }
       - { label: Veículo, name: outlet, widget: string, i18n: duplicate }
       - { label: Data, name: date, widget: datetime, time_format: false, i18n: duplicate }
       - { label: URL, name: externalUrl, widget: string, i18n: duplicate }
@@ -192,8 +235,8 @@ collections:
       - { label: Chave de tradução, name: translationKey, widget: uuid, i18n: duplicate }
 
   - name: projects
-    label: Projetos
-    label_singular: Projeto
+    label: Tecnologias
+    label_singular: Tecnologia
     folder: content/project-items
     filter: { field: type, value: project }
     create: true

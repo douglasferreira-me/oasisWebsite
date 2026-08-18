@@ -1,0 +1,11 @@
+{{ $person := .page }}
+<article class="person-card">
+  <a class="person-photo" href="{{ with $person.Params.bioUrl }}{{ . }}{{ else }}{{ $person.RelPermalink }}{{ end }}" {{ with $person.Params.bioUrl }}target="_blank" rel="noopener noreferrer"{{ end }}>
+    {{ with $person.Params.image }}<img src="{{ . | relURL }}" alt="{{ $person.Title }}" loading="lazy">{{ else }}<span class="person-placeholder" aria-hidden="true">{{ substr $person.Title 0 1 }}</span>{{ end }}
+  </a>
+  <div class="person-info"><h3><a href="{{ with $person.Params.bioUrl }}{{ . }}{{ else }}{{ $person.RelPermalink }}{{ end }}" {{ with $person.Params.bioUrl }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ $person.Title }}</a></h3>
+    {{ with $person.Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
+    {{ with $person.Params.academicBackground }}<p class="person-background">{{ . }}</p>{{ end }}
+    <a class="text-link" href="{{ with $person.Params.bioUrl }}{{ . }}{{ else }}{{ $person.RelPermalink }}{{ end }}" {{ with $person.Params.bioUrl }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }} →</a>
+  </div>
+</article>

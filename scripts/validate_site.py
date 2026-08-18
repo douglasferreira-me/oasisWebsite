@@ -43,6 +43,21 @@ REQUIRED_HOME_TEXT = {
     ],
 }
 
+REQUIRED_PAGE_TEXT = {
+    "team/index.html": ["Quem faz o OASIS", "Coordenadores", "Conselho Acadêmico", "Extensionistas"],
+    "en/team/index.html": ["People behind OASIS", "Coordinators", "Academic Council", "Outreach Fellows"],
+    "es/team/index.html": ["Quiénes hacen OASIS", "Coordinadores", "Consejo Académico", "Extensionistas"],
+    "media/index.html": ["Repercussão"],
+    "en/media/index.html": ["Coverage"],
+    "es/media/index.html": ["Repercusión"],
+    "projects/index.html": ["Tecnologias"],
+    "en/projects/index.html": ["Technologies"],
+    "es/projects/index.html": ["Tecnologías"],
+    "contact/index.html": ["contato@oasisufrj.org", "Instagram", "LinkedIn"],
+    "en/contact/index.html": ["contato@oasisufrj.org", "Instagram", "LinkedIn"],
+    "es/contact/index.html": ["contato@oasisufrj.org", "Instagram", "LinkedIn"],
+}
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -63,6 +78,18 @@ def main() -> int:
         for snippet in snippets:
             if snippet not in text:
                 errors.append(f"{route} missing required institutional text: {snippet}")
+
+    for route, snippets in REQUIRED_PAGE_TEXT.items():
+        page = root / route
+        if not page.is_file():
+            errors.append(f"missing route: {route}")
+            continue
+        text = page.read_text(encoding="utf-8")
+        for snippet in snippets:
+            if snippet not in text:
+                errors.append(f"{route} missing required page text: {snippet}")
+        if route.endswith("contact/index.html") and "Vínculo institucional" in text:
+            errors.append(f"{route} still contains the removed institutional affiliation block")
 
     html_files = list(root.rglob("*.html"))
     for path in html_files:

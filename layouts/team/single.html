@@ -1,0 +1,4 @@
+{{ define "main" }}
+<header class="page-hero"><div class="container"><p class="eyebrow">{{ .Params.role }}</p><h1>{{ .Title }}</h1><p class="lead">{{ .Params.academicBackground }}</p></div></header>
+<section class="section"><div class="container profile-layout"><div class="profile-photo">{{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ else }}<span class="person-placeholder" aria-hidden="true">{{ substr .Title 0 1 }}</span>{{ end }}</div><article class="prose">{{ with .Params.summary }}<p class="profile-summary">{{ . }}</p>{{ end }}{{ .Content }}{{ with .Params.links }}<ul class="profile-links">{{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} →</a></li>{{ end }}</ul>{{ end }}</article></div></section>
+{{ end }}

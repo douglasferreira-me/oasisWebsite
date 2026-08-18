@@ -1,0 +1,4 @@
+{{ define "main" }}
+<header class="page-hero"><div class="container"><p class="eyebrow">{{ .Params.eyebrow }}</p><h1>{{ .Title }}</h1><p class="lead">{{ .Params.description }}</p></div></header>
+<section class="section"><div class="container">{{ $items := where .Site.RegularPages "Section" "media-items" }}{{ if gt (len $items) 0 }}<div class="media-grid">{{ range $items.ByDate.Reverse }}{{ partial "media-card.html" . }}{{ end }}</div>{{ else }}<div class="empty-state"><strong>{{ .Params.placeholderTitle }}</strong><span>{{ .Params.placeholderText }}</span></div>{{ end }}</div></section>
+{{ end }}

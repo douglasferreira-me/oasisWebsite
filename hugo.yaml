@@ -33,14 +33,16 @@ languages:
       menuLabel: "Abrir menu"
       socialLabel: "Redes sociais"
       readMore: "Saiba mais"
+      mediaLabel: "Mídia"
+      eventLabel: "Evento"
       footerText: "Tecnologia sob uma perspectiva democrática, inclusiva e socialmente responsável."
     menu:
       main:
         - { name: "Sobre", pageRef: "/about", weight: 10 }
-        - { name: "Equipe", pageRef: "/team", weight: 20 }
+        - { name: "Quem faz o OASIS", pageRef: "/team", weight: 20 }
         - { name: "Estudos", pageRef: "/studies", weight: 30 }
-        - { name: "Na mídia", pageRef: "/media", weight: 40 }
-        - { name: "Projetos", pageRef: "/projects", weight: 50 }
+        - { name: "Repercussão", pageRef: "/media", weight: 40 }
+        - { name: "Tecnologias", pageRef: "/projects", weight: 50 }
         - { name: "Contato", pageRef: "/contact", weight: 60 }
   en:
     label: "English"
@@ -56,14 +58,16 @@ languages:
       menuLabel: "Open menu"
       socialLabel: "Social media"
       readMore: "Learn more"
+      mediaLabel: "Media"
+      eventLabel: "Event"
       footerText: "Technology through a democratic, inclusive and socially responsible perspective."
     menu:
       main:
         - { name: "About", pageRef: "/about", weight: 10 }
-        - { name: "Team", pageRef: "/team", weight: 20 }
+        - { name: "People behind OASIS", pageRef: "/team", weight: 20 }
         - { name: "Studies", pageRef: "/studies", weight: 30 }
-        - { name: "In the media", pageRef: "/media", weight: 40 }
-        - { name: "Projects", pageRef: "/projects", weight: 50 }
+        - { name: "Coverage", pageRef: "/media", weight: 40 }
+        - { name: "Technologies", pageRef: "/projects", weight: 50 }
         - { name: "Contact", pageRef: "/contact", weight: 60 }
   es:
     label: "Español"
@@ -79,14 +83,16 @@ languages:
       menuLabel: "Abrir menú"
       socialLabel: "Redes sociales"
       readMore: "Más información"
+      mediaLabel: "Medios"
+      eventLabel: "Evento"
       footerText: "Tecnología desde una perspectiva democrática, inclusiva y socialmente responsable."
     menu:
       main:
         - { name: "Sobre", pageRef: "/about", weight: 10 }
-        - { name: "Equipo", pageRef: "/team", weight: 20 }
+        - { name: "Quiénes hacen OASIS", pageRef: "/team", weight: 20 }
         - { name: "Estudios", pageRef: "/studies", weight: 30 }
-        - { name: "En los medios", pageRef: "/media", weight: 40 }
-        - { name: "Proyectos", pageRef: "/projects", weight: 50 }
+        - { name: "Repercusión", pageRef: "/media", weight: 40 }
+        - { name: "Tecnologías", pageRef: "/projects", weight: 50 }
         - { name: "Contacto", pageRef: "/contact", weight: 60 }
 outputs:
   home: [HTML, RSS]

@@ -3,8 +3,8 @@ title: "Observatorio de Algoritmos y Sistemas de Información con Impacto Social
 tagline: "Por una tecnología responsable"
 description: "Investigamos cómo los algoritmos, la inteligencia artificial y los sistemas de información transforman la sociedad — y producimos conocimiento para que esa transformación sea democrática, inclusiva y responsable."
 eyebrow: "Universidad Federal de Río de Janeiro (UFRJ)"
-primaryCta: { label: "Conoce OASIS", url: "about/" }
-secondaryCta: { label: "Explora los proyectos", url: "projects/" }
+primaryCta: { label: "Tecnologías que construimos", url: "projects/" }
+secondaryCta: { label: "Conoce nuestros estudios", url: "studies/" }
 pillarsTitle: "Observar, comprender y transformar"
 pillarsIntro: "Reunimos diferentes áreas del conocimiento para acercar evidencias técnicas, derechos y participación social."
 pillars:
@@ -14,7 +14,9 @@ pillars:
     text: "Seguimos impactos, políticas y debates regulatorios para hacer más accesible la información fragmentada."
   - title: "Diálogo con la sociedad"
     text: "Promovemos estudios, talleres, seminarios y materiales que acercan la universidad, el sector público y la sociedad civil."
-featuredTitle: "Proyectos destacados"
-featuredIntro: "Iniciativas que transforman datos e investigación en instrumentos de transparencia, formación y participación pública."
+partnersTitle: "Aliados"
+partnersIntro: "Organizaciones que colaboran con nosotros para construir tecnologías responsables y conocimiento de interés público."
+partnersPlaceholderTitle: "Nuevas alianzas en construcción"
+partnersPlaceholderText: "Los logotipos y enlaces de las organizaciones aliadas se publicarán aquí."
 translationKey: "home"
 ---

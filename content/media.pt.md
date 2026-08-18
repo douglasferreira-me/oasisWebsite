@@ -1,11 +1,11 @@
 ---
-title: "Na mídia"
-description: "Entrevistas, reportagens, participações públicas e referências ao trabalho do OASIS."
+title: "Repercussão"
+description: "Notícias, entrevistas, reportagens e eventos que ampliam o alcance do trabalho do OASIS."
 eyebrow: "Repercussão"
-layout: "listing"
+layout: "media"
 type: "page"
 collection: "media-items"
 placeholderTitle: "Clipping em atualização"
-placeholderText: "Entrevistas, reportagens e participações públicas serão adicionadas aqui com seus respectivos links e datas."
+placeholderText: "Notícias, reportagens e eventos serão adicionados aqui com imagem, link e data."
 translationKey: "media"
 ---

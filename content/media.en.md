@@ -1,11 +1,11 @@
 ---
-title: "In the media"
-description: "Interviews, news coverage, public appearances and references to the work of OASIS."
+title: "Coverage"
+description: "News, interviews, reports and events that broaden the reach of OASIS's work."
 eyebrow: "Coverage"
-layout: "listing"
+layout: "media"
 type: "page"
 collection: "media-items"
 placeholderTitle: "Media archive being updated"
-placeholderText: "Interviews, news stories and public appearances will be added here with their links and dates."
+placeholderText: "News, reports and events will be added here with an image, link and date."
 translationKey: "media"
 ---

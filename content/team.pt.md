@@ -1,11 +1,14 @@
 ---
-title: "Equipe"
+title: "Quem faz o OASIS"
 description: "Uma rede interdisciplinar de estudantes, pesquisadores, docentes e colaboradores reunida para compreender os impactos sociais da tecnologia."
 eyebrow: "Pessoas"
-layout: "listing"
+layout: "team"
 type: "page"
 collection: "team-items"
-placeholderTitle: "Equipe em atualização"
-placeholderText: "Os perfis, vínculos e áreas de atuação serão publicados aqui após a confirmação dos dados institucionais."
+coordinatorsTitle: "Coordenadores"
+academicCouncilTitle: "Conselho Acadêmico"
+extensionistsTitle: "Extensionistas"
+profileLabel: "Ver minibio"
+groupPlaceholder: "Perfis em atualização."
 translationKey: "team"
 ---

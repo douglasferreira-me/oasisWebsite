@@ -30,7 +30,7 @@ Português é o idioma padrão. Traduções usam arquivos separados:
 - `pagina.en.md` — inglês;
 - `pagina.es.md` — espanhol.
 
-As páginas fixas ficam em `content/`. Integrantes, estudos, registros de mídia e projetos ficam em suas coleções `*-items`.
+As páginas fixas ficam em `content/`. Perfis, estudos, registros de repercussão e tecnologias ficam em suas coleções `*-items`. A prateleira de parceiros é compartilhada entre os idiomas e fica em `data/partners.yaml`.
 
 ## Sveltia CMS
 
@@ -43,7 +43,7 @@ Depois do deploy, o painel estará em:
 3. Cole o token no painel. O token fica somente no armazenamento local do navegador e nunca deve ser salvo no repositório.
 4. Edite as três traduções antes de publicar uma alteração.
 
-O CMS controla Home, Sobre, Equipe, Estudos, Na mídia, Projetos, Contato e as coleções repetíveis. Uploads são versionados em `static/uploads/`.
+O CMS controla Home, Sobre, Quem faz o OASIS, Estudos, Repercussão, Tecnologias, Contato e as coleções repetíveis. Em **Configurações → Parceiros**, cada item recebe nome, logo, site e ordem de exibição. Uploads são versionados em `static/uploads/`.
 
 ## Publicação
 

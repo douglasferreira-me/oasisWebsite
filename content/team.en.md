@@ -1,11 +1,14 @@
 ---
-title: "Team"
+title: "People behind OASIS"
 description: "An interdisciplinary network of students, researchers, faculty and collaborators working to understand technology's social impacts."
 eyebrow: "People"
-layout: "listing"
+layout: "team"
 type: "page"
 collection: "team-items"
-placeholderTitle: "Team information being updated"
-placeholderText: "Profiles, affiliations and areas of work will be published here once the institutional information has been confirmed."
+coordinatorsTitle: "Coordinators"
+academicCouncilTitle: "Academic Council"
+extensionistsTitle: "Outreach Fellows"
+profileLabel: "View profile"
+groupPlaceholder: "Profiles being updated."
 translationKey: "team"
 ---
