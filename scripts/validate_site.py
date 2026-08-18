@@ -83,7 +83,7 @@ def main() -> int:
             if not re.search(pattern, text):
                 errors.append(f"{relative} missing {label}")
         if not re.search(
-            r'hreflang=(?:"x-default"|x-default)\s+href=(?:"https://douglasferreira-me\.github\.io/oasisWebsite/"|https://douglasferreira-me\.github\.io/oasisWebsite/)',
+            r'hreflang=(?:"x-default"|x-default)\s+href=(?:"https://oasisufrj\.org/"|https://oasisufrj\.org/)',
             text,
         ):
             errors.append(f"{relative} has an invalid x-default URL")
@@ -103,16 +103,16 @@ def main() -> int:
                 errors.append(f"{relative} contains an image without alt text")
         for target in re.findall(r"(?:href|src)=(?:\"([^\"]+)\"|'([^']+)'|([^\s>]+))", text):
             url = next(part for part in target if part)
-            if not url.startswith("/oasisWebsite/"):
+            if not url.startswith("/") or url.startswith("//"):
                 continue
-            local = url.removeprefix("/oasisWebsite/").split("?", 1)[0].split("#", 1)[0]
+            local = url.removeprefix("/").split("?", 1)[0].split("#", 1)[0]
             candidate = root / local
             if url.endswith("/"):
                 candidate /= "index.html"
             if not candidate.exists():
                 errors.append(f"{relative} links to missing local target: {url}")
-        if re.search(r'(href|src)="/(?!oasisWebsite/)', text):
-            errors.append(f"{relative} contains a root-absolute asset or link")
+        if "/oasisWebsite/" in text:
+            errors.append(f"{relative} contains the obsolete GitHub project path")
         for social_url in (
             "https://www.instagram.com/oasis.ufrj/",
             "https://www.linkedin.com/company/oasis-ufrj",
@@ -122,12 +122,15 @@ def main() -> int:
 
     sitemap = root / "sitemap.xml"
     robots = root / "robots.txt"
+    cname = root / "CNAME"
     if not sitemap.is_file():
         errors.append("missing sitemap.xml")
     elif "/admin/" in sitemap.read_text(encoding="utf-8"):
         errors.append("admin appears in sitemap.xml")
-    if not robots.is_file() or "Disallow: /oasisWebsite/admin/" not in robots.read_text(encoding="utf-8"):
+    if not robots.is_file() or "Disallow: /admin/" not in robots.read_text(encoding="utf-8"):
         errors.append("robots.txt does not exclude admin")
+    if not cname.is_file() or cname.read_text(encoding="utf-8").strip() != "oasisufrj.org":
+        errors.append("CNAME is missing or does not contain oasisufrj.org")
 
     if errors:
         print("Validation failed:", file=sys.stderr)

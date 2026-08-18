@@ -5,7 +5,7 @@ backend:
   branch: main
 
 media_folder: static/uploads
-public_folder: /oasisWebsite/uploads
+public_folder: /uploads
 publish_mode: simple
 
 i18n:
@@ -14,9 +14,9 @@ i18n:
   default_locale: pt
   initial_locales: all
 
-site_url: https://douglasferreira-me.github.io/oasisWebsite/
-display_url: https://douglasferreira-me.github.io/oasisWebsite/
-logo_url: https://douglasferreira-me.github.io/oasisWebsite/images/oasis-symbol.png
+site_url: https://oasisufrj.org/
+display_url: https://oasisufrj.org/
+logo_url: https://oasisufrj.org/images/oasis-symbol.png
 
 collections:
   - name: settings

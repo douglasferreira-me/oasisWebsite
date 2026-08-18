@@ -15,7 +15,7 @@ pnpm install --frozen-lockfile
 pnpm run dev:watch
 ```
 
-O site será servido normalmente em `http://localhost:1313/oasisWebsite/`. Para gerar a versão de produção:
+O site será servido normalmente em `http://localhost:1313/`. Para gerar a versão de produção:
 
 ```bash
 pnpm run build
@@ -36,7 +36,7 @@ As páginas fixas ficam em `content/`. Integrantes, estudos, registros de mídia
 
 Depois do deploy, o painel estará em:
 
-`https://douglasferreira-me.github.io/oasisWebsite/admin/`
+`https://oasisufrj.org/admin/`
 
 1. Abra o painel e selecione **Sign In with Token**.
 2. Use o link oferecido pelo Sveltia para criar um token de acesso do GitHub com permissão de escrita no repositório `douglasferreira-me/oasisWebsite`.
