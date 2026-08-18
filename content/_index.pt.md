@@ -15,7 +15,7 @@ pillars:
   - title: "Diálogo com a sociedade"
     text: "Promovemos estudos, oficinas, seminários e materiais que aproximam universidade, poder público e sociedade civil."
 partnersTitle: "Parceiros"
-partnersIntro: "Organizações que caminham conosco na construção de tecnologias responsáveis e conhecimento de interesse público."
+partnersIntro: "Organizações que caminham conosco na construção de tecnologias responsáveis, inclusivas e voltadas ao bem comum."
 partnersPlaceholderTitle: "Novas parcerias em construção"
 partnersPlaceholderText: "Os logos e links das organizações parceiras serão publicados aqui."
 translationKey: "home"
