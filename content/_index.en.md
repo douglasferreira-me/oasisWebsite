@@ -15,7 +15,7 @@ pillars:
   - title: "Dialogue with society"
     text: "We promote studies, workshops, seminars and resources that connect the university, public authorities and civil society."
 partnersTitle: "Partners"
-partnersIntro: "Organizations working with us to build responsible technologies and knowledge in the public interest."
+partnersIntro: "Organizations working alongside us to build responsible, inclusive technologies for the common good."
 partnersPlaceholderTitle: "New partnerships in development"
 partnersPlaceholderText: "Partner organizations' logos and links will be published here."
 translationKey: "home"
