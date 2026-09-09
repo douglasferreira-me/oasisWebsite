@@ -5,7 +5,7 @@ group: coordinators
 role: "Communication and Strategy Coordinator"
 academicBackground: "Bachelor's degree in Social Sciences and Master's degree in History of Science and Technology from UFRJ; PhD candidate in Social Communication at PUC-Rio."
 summary: "Professor and researcher in communication and technology, focusing on platform studies, digital politics and sociotechnical infrastructures."
-image: "/uploads/douglas-ferreira.png"
+image: "/uploads/douglas-ferreira-terno-azul.png"
 bioUrl: ""
 links:
   - label: LinkedIn

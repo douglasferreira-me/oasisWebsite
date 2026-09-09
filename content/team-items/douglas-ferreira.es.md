@@ -5,7 +5,7 @@ group: coordinators
 role: "Coordinador de Comunicación y Estrategia"
 academicBackground: "Graduado en Ciencias Sociales y máster en Historia de las Ciencias y las Técnicas por la UFRJ; doctorando en Comunicación Social por la PUC-Rio."
 summary: "Profesor e investigador en comunicación y tecnología, con foco en estudios de plataforma, política digital e infraestructuras sociotécnicas."
-image: "/uploads/douglas-ferreira.png"
+image: "/uploads/douglas-ferreira-terno-azul.png"
 bioUrl: ""
 links:
   - label: LinkedIn
