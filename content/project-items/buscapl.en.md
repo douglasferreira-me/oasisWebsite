@@ -8,6 +8,7 @@ period: "Ongoing initiative"
 partners: ["OASIS/UFRJ"]
 topics: ["Legislation", "Artificial intelligence", "Public data"]
 externalUrl: "https://dashboard-oasis.streamlit.app/"
+image: "/uploads/buscapl-cover.png"
 featured: true
 weight: 20
 translationKey: "buscapl"
