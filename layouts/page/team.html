@@ -10,7 +10,12 @@
   {{ range $groups }}
     {{ $group := . }}{{ $members := where $people "Params.group" $group.key }}
     <section class="team-group" aria-labelledby="team-{{ $group.key }}"><div class="section-heading compact"><h2 id="team-{{ $group.key }}">{{ $group.label }}</h2></div>
-      {{ if gt (len $members) 0 }}<div class="people-grid">{{ range $members.ByWeight }}{{ partial "person-card.html" (dict "page" . "label" $.Params.profileLabel) }}{{ end }}</div>
+      {{ if gt (len $members) 0 }}
+        {{ if eq $group.key "extensionists" }}
+          <div class="extensionists-mosaic">{{ range $members.ByWeight }}{{ partial "extensionist-tile.html" . }}{{ end }}</div>
+        {{ else }}
+          <div class="people-grid">{{ range $members.ByWeight }}{{ partial "person-card.html" (dict "page" . "label" $.Params.profileLabel) }}{{ end }}</div>
+        {{ end }}
       {{ else }}<p class="group-empty">{{ $.Params.groupPlaceholder }}</p>{{ end }}
     </section>
   {{ end }}

@@ -1,0 +1,21 @@
+<article class="extensionist-tile">
+  {{ with .Params.linkedinUrl }}
+    <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $.Title }} — LinkedIn">
+      {{ with $.Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+      {{ else }}
+        <span class="extensionist-placeholder" aria-hidden="true">{{ substr $.Title 0 1 }}</span>
+      {{ end }}
+      <span class="extensionist-name">{{ $.Title }}</span>
+    </a>
+  {{ else }}
+    <div class="extensionist-missing-link" aria-label="{{ .Title }}">
+      {{ with .Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+      {{ else }}
+        <span class="extensionist-placeholder" aria-hidden="true">{{ substr $.Title 0 1 }}</span>
+      {{ end }}
+      <span class="extensionist-name">{{ .Title }}</span>
+    </div>
+  {{ end }}
+</article>

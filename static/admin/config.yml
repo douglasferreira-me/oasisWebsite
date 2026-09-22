@@ -180,11 +180,12 @@ collections:
           - { label: Coordenadores, value: coordinators }
           - { label: Conselho Acadêmico, value: academic-council }
           - { label: Extensionistas, value: extensionists }
-      - { label: Função, name: role, widget: string, i18n: true }
-      - { label: Formação acadêmica (legenda), name: academicBackground, widget: text, i18n: true }
-      - { label: Resumo da minibio, name: summary, widget: text, i18n: true }
+      - { label: Função, name: role, widget: string, i18n: true, required: false }
+      - { label: Formação acadêmica (legenda), name: academicBackground, widget: text, i18n: true, required: false }
+      - { label: Resumo da minibio, name: summary, widget: text, i18n: true, required: false }
       - { label: Minibio completa, name: body, widget: richtext, i18n: true, required: false }
       - { label: Foto, name: image, widget: image, i18n: duplicate, required: false }
+      - { label: LinkedIn (obrigatório para extensionistas), name: linkedinUrl, widget: string, i18n: duplicate, required: false, hint: "O mosaico de extensionistas leva diretamente a este perfil do LinkedIn." }
       - { label: Link externo para minibio, name: bioUrl, widget: string, i18n: duplicate, required: false, hint: "Deixe vazio para usar a minibio criada acima." }
       - { label: Links, name: links, widget: list, i18n: duplicate, required: false, fields: [{ label: Rótulo, name: label, widget: string }, { label: URL, name: url, widget: string }] }
       - { label: Ordem, name: weight, widget: number, value_type: int, i18n: duplicate, default: 50 }
