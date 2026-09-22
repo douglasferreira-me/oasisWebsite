@@ -12,7 +12,7 @@
     <section class="team-group" aria-labelledby="team-{{ $group.key }}"><div class="section-heading compact"><h2 id="team-{{ $group.key }}">{{ $group.label }}</h2></div>
       {{ if gt (len $members) 0 }}
         {{ if eq $group.key "extensionists" }}
-          <div class="extensionists-mosaic">{{ range $members.ByWeight }}{{ partial "extensionist-tile.html" . }}{{ end }}</div>
+          {{ $extensionists := $members.ByWeight }}{{ $rowSize := 8 }}{{ $rowCount := div (add (len $extensionists) (sub $rowSize 1)) $rowSize }}<div class="extensionists-mosaic">{{ range $row := seq 0 (sub $rowCount 1) }}<div class="extensionist-row extensionist-row-{{ mod $row 3 }}">{{ range first $rowSize (after (mul $row $rowSize) $extensionists) }}{{ partial "extensionist-tile.html" . }}{{ end }}</div>{{ end }}</div>
         {{ else }}
           <div class="people-grid">{{ range $members.ByWeight }}{{ partial "person-card.html" (dict "page" . "label" $.Params.profileLabel) }}{{ end }}</div>
         {{ end }}
