@@ -2,7 +2,7 @@
   {{ with .Params.linkedinUrl }}
     <a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $.Title }} — LinkedIn">
       {{ with $.Params.image }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+        <span class="extensionist-image" style="--extensionist-image:url('{{ . | relURL }}')"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></span>
       {{ else }}
         <span class="extensionist-placeholder" aria-hidden="true">{{ substr $.Title 0 1 }}</span>
       {{ end }}
@@ -11,7 +11,7 @@
   {{ else }}
     <div class="extensionist-missing-link" aria-label="{{ .Title }}">
       {{ with .Params.image }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+        <span class="extensionist-image" style="--extensionist-image:url('{{ . | relURL }}')"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></span>
       {{ else }}
         <span class="extensionist-placeholder" aria-hidden="true">{{ substr $.Title 0 1 }}</span>
       {{ end }}
